@@ -1,7 +1,8 @@
 import java.util.*;
 import java.util.Calendar;
 import java.time.*;
-
+//Date and Calendar are mutable and not thread-safe, was there before Java 8
+//LocalDate, LocalTime, LocalDateTime are immutable and thread-safe, introduced in Java 8
 class Main {
     public static void main(String[] args) {
         // Creating a Date object with the current date and time
@@ -52,5 +53,11 @@ class Main {
         System.out.println(d.getMonth());  // Current month
         System.out.println(d.getDayOfMonth());  // Current day of the month
         System.out.println(d.getYear());  // Current year
+
+        LocalTime d1 = LocalTime.now();  // Getting current time
+        LocalTime d2 = LocalTime.of(10, 20, 30);  // Creating a specific time
+        System.out.println(d2.getHour());  // Prints 10
+
+        System.out.println(d1.getHour());  // Current hour
     }
 }
