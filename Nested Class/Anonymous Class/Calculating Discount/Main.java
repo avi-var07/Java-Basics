@@ -17,6 +17,7 @@ class Main {
         double amnt = sc.nextDouble();
         System.out.println("Enter customer type: reg(Press R)/vip(Press V): ");
         String type = sc.next().toLowerCase();
+        ShoppingCart shop = new ShoppingCart(amnt, type);
         Discount dis = new Discount(){
             public double getDiscount(double amnt, String type){
                 switch (type) {
@@ -29,7 +30,8 @@ class Main {
             }
         };
         
-        System.out.println("Final amnt: "+dis.getDiscount(amnt, type)  );
+        double finalAmount = dis.getDiscount(shop.cartAmnt, shop.cartType);
+        System.out.println("Final Amount is: "+finalAmount);
         sc.close();
     }
     
