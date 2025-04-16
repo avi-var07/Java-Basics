@@ -17,7 +17,7 @@ class enums{
         System.out.println(i);
         
         switch(d){
-            case monday: System.out.println("monday");
+            case monday: System.out.println("monday"); 
             break;
             case tuesday: System.out.println("tuesday");
             break;
